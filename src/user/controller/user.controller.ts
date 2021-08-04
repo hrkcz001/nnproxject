@@ -1,11 +1,19 @@
-import { Body, Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Query } from '@nestjs/common';
 import { UserService } from '../service/user.service';
 
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
-  @Get('xui')
-  getUsers(@Body('limit') limit: number) {
-    return this.userService.getUsers(limit);
+  @Get('')
+  getUsers(@Query('limit') limit: number) {
+    return this.userService.getUsers(Number(limit));
+  }
+  @Post()
+  createUser() {
+    return this.userService.createUser({
+      firstName: 'Test 3',
+      lastName: 'Test 3',
+      age: 2,
+    });
   }
 }

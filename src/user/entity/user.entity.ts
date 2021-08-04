@@ -1,7 +1,8 @@
 import { Entity, ObjectIdColumn, ObjectID, Column } from 'typeorm';
+import { UserInterface } from '../types';
 
 @Entity()
-export class UserEntity {
+export class UserEntity implements UserInterface {
   @ObjectIdColumn()
   id: ObjectID;
 
