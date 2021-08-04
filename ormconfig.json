@@ -1,20 +1,14 @@
 {
-   "type": "mongodb",
-   "url": "mongodb+srv://hrkcz001:qwe123@cluster0.oh7zz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-   "synchronize": true,
-   "logging": false,
-   "entities": [
-      "src/entity/**/*.ts"
-   ],
-   "migrations": [
-      "src/migration/**/*.ts"
-   ],
-   "subscribers": [
-      "src/subscriber/**/*.ts"
-   ],
-   "cli": {
-      "entitiesDir": "src/entity",
-      "migrationsDir": "src/migration",
-      "subscribersDir": "src/subscriber"
-   }
+  "type": "mongodb",
+  "url": "mongodb+srv://hrkcz001:qwe123@cluster0.oh7zz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "synchronize": true,
+  "logging": false,
+  "entities": ["build/**/*.entity.js"],
+  "migrations": ["src/migration/**/*.ts"],
+  "subscribers": ["src/subscriber/**/*.ts"],
+  "cli": {
+    "entitiesDir": "src/entity",
+    "migrationsDir": "src/migration",
+    "subscribersDir": "src/subscriber"
+  }
 }
