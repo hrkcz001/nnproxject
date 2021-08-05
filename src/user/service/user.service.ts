@@ -16,7 +16,10 @@ export class UserService {
   deleteUser = async (userId: string) => {
     const user: UserEntity | undefined = await this.userRepository.findOne({_id: new ObjectID(userId)});
     if(!user)
-      return -1;
+      return {
+        "statusCode": 404,
+        "message": 'Not found'
+      };
     return await this.userRepository.remove(user);
   };
 }
