@@ -1,19 +1,17 @@
 import { Controller, Get, Post, Query } from '@nestjs/common';
 import { UserService } from '../service/user.service';
+import { UserInterface } from '../types';
 
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
-  @Get('')
+  @Get('find')
   getUsers(@Query('limit') limit: number) {
     return this.userService.getUsers(Number(limit));
   }
-  @Post()
-  createUser() {
-    return this.userService.createUser({
-      firstName: 'Test 3',
-      lastName: 'Test 3',
-      age: 2,
-    });
+  @Post('create')
+  createUser(@Query('firstName') firstName: string, @Query('lastName') lastName: string, @Query('age') age: number) {
+    const user: UserInterface = {firstName, lastName, age};
+    return this.userService.createUser(user);
   }
 }
