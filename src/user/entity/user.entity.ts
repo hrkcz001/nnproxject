@@ -4,7 +4,7 @@ import { UserInterface } from '../types';
 @Entity()
 export class UserEntity implements UserInterface {
   @ObjectIdColumn()
-  id: ObjectID;
+  _id: ObjectID;
 
   @Column()
   firstName: string;
