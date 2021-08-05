@@ -10,7 +10,7 @@ export class UserService {
   getUsers = async (limit?: number, offset?: number) => {
     return await this.userRepository.find({ skip: offset, take: limit });
   };
-  getUsersBy = async (userId: string, firstName: string, lastName: string, age: number) => {
+  getUsersBy = async (userId: string, firstName: string, lastName: string, age: number, limit: number, offset: number) => {
     let user: UserEntity = new UserEntity();
     if(userId)
       user._id = new ObjectID(userId);
@@ -20,7 +20,7 @@ export class UserService {
       user.lastName = lastName;
     if(age)
       user.age = age;
-    return await this.userRepository.find({where: user});
+    return await this.userRepository.find({skip: offset, take: limit, where: user});
   };
   createUser = async (user: UserInterface) => {
     return await this.userRepository.save(user);

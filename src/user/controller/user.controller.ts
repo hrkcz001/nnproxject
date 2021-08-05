@@ -12,8 +12,8 @@ export class UserController {
     return this.userService.getUsers(Number(limit), Number(offset));
   }
   @Get('findBy')
-  getUsersBy(@Query('id') id: string, @Query('firstName') firstName: string, @Query('lastName') lastName: string, @Query('age') age: number){
-    return this.userService.getUsersBy(id, firstName, lastName, age);
+  getUsersBy(@Query('id') id: string, @Query('firstName') firstName: string, @Query('lastName') lastName: string, @Query('age') age: number, @Query('limit') limit: number, @Query('offset') offset: number){
+    return this.userService.getUsersBy(id, firstName, lastName, age, limit, offset);
   }
   @Post('create')
   createUser(@Query('firstName') firstName: string, @Query('lastName') lastName: string, @Query('age') age: number) {
