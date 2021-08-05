@@ -1,8 +1,6 @@
 import { Controller, Delete, Get, Post, Query } from '@nestjs/common';
 import { UserService } from '../service/user.service';
 import { UserInterface } from '../types';
-import { ObjectID } from 'typeorm';
-import { identity } from 'rxjs';
 
 @Controller('user')
 export class UserController {
