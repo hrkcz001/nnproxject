@@ -8,4 +8,4 @@ async function bootstrap() {
 }
 bootstrap()
 
-//mongodb+srv://hrkcz001:<password>@cluster0.oh7zz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+//mongodb+srv://hrkcz001:<password>@cluster0.oh7zz.mongodb.net/myFirstDatabase?retryWrites=true&w=majorit
